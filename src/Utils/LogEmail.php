@@ -2,7 +2,7 @@
 
 namespace Codans\Codans\Utils;
 
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 

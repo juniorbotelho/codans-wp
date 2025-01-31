@@ -2,7 +2,7 @@
 
 namespace Codans\Codans\Elementor\Actions;
 
-if (! defined('ABSPATH')) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 
