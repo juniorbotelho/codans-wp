@@ -1,12 +1,12 @@
 <?php
 
-namespace Codans\Codans\Elementor\Actions\Email_Marketing;
+namespace Codans\Codans\Elementor\Actions;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use Codans\Codans\Utils\ILogEmail;
+use \Codans\Codans\Utils\ILogEmail;
 use \ElementorPro\Modules\Forms\Classes\Action_Base;
 
 /**

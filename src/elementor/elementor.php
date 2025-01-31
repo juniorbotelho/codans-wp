@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-use \Codans\Codans\Elementor\Actions\Email_Marketing\Custom_Kit_Action;
+use \Codans\Codans\Elementor\Actions\Custom_Kit_Action;
 use \Codans\Codans\Utils\Log_Email;
 
 /**
