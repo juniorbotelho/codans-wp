@@ -1,7 +1,9 @@
 <?php
 
+namespace Codans\Codans\Utils;
+
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+	exit;
 }
 
 interface ILogEmail {

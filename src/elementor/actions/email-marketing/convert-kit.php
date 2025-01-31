@@ -1,8 +1,12 @@
 <?php
+
+namespace Codans\Codans\Elementor\Actions\Email_Marketing;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+use Codans\Codans\Utils\ILogEmail;
 use \ElementorPro\Modules\Forms\Classes\Action_Base;
 
 /**
@@ -15,6 +19,10 @@ use \ElementorPro\Modules\Forms\Classes\Action_Base;
 class Custom_Kit_Action extends \ElementorPro\Modules\Forms\Classes\Action_Base {
 
   private ILogEmail $log_email;
+
+  public function __construct( ILogEmail $log_email ) {
+    $this->log_email = $log_email;
+  }
 
 	/**
 	 * Get action name.
