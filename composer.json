@@ -1,0 +1,19 @@
+{
+  "name": "codans/codans",
+  "description": "Official codans plugin that gives Wordpress superpowers to handle the company's own relationships.",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Codans\\Codans\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "juniorbotelho",
+      "email": "junowerther@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {}
+}

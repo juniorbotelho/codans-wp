@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Add new subscriber to Sendy.
+ * Add new subscriber to Kit.
  *
  * @since 1.0.0
  * @param ElementorPro\Modules\Forms\Registrars\Form_Actions_Registrar $form_actions_registrar

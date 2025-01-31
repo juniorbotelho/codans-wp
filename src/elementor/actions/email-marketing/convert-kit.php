@@ -1,6 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+	exit;
 }
 
 use \ElementorPro\Modules\Forms\Classes\Action_Base;
@@ -13,6 +13,8 @@ use \ElementorPro\Modules\Forms\Classes\Action_Base;
  * @since 1.0.0
  */
 class Custom_Kit_Action extends \ElementorPro\Modules\Forms\Classes\Action_Base {
+
+  private ILogEmail $log_email;
 
 	/**
 	 * Get action name.
