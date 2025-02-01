@@ -20,14 +20,14 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-require_once __DIR__ . 'vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
-// Variables
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+use Dotenv\Dotenv;
+use Codans\Controller\{FormActionController, RedirectController};
+
+/** @var Dotenv */
+$dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
-use Codans\Elementor\Controller\FormActionController;
-use Codans\Wordpress\Controller\SmartRedirectController;
-
 FormActionController::register();
-SmartRedirectController::register();
+RedirectController::register();
