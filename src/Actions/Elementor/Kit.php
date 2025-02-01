@@ -16,7 +16,7 @@ use \ElementorPro\Modules\Forms\Classes\Action_Base;
  *
  * @since 1.0.0
  */
-class CustomKitAction extends \ElementorPro\Modules\Forms\Classes\Action_Base
+class KitAction extends \ElementorPro\Modules\Forms\Classes\Action_Base
 {
 	/**
 	 * Log email class dependency.

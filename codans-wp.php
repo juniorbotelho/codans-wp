@@ -18,8 +18,8 @@ if (! defined('ABSPATH')) {
 	exit;
 }
 
-require_once __DIR__ . 'vendor/autoload.php';
-
-// Load the `dotenv` library for environment variable handling
+// Variables
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
+
+require_once __DIR__ . 'vendor/autoload.php';
