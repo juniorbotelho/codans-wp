@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /**
  * Plugin Name: Codans WP
  * Description: Official codans plugin that gives Wordpress superpowers to handle the company's own relationships.
