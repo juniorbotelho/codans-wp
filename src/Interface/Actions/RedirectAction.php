@@ -2,4 +2,6 @@
 
 namespace Codans\Interfaces\Actions;
 
-interface IRedirectAction {}
+interface IRedirectAction
+{
+}

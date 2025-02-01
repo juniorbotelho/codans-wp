@@ -15,7 +15,7 @@
  */
 
 if (! defined('ABSPATH')) {
-	exit;
+    exit;
 }
 
 // Variables
