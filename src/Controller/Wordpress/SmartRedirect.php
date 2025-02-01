@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codans\Wordpress\Hook;
+namespace Codans\Wordpress\Controller;
 
 use Codans\Wordpress\Actions\RedirectAction;
 
-class SmartRedirect
+class SmartRedirectController
 {
 	/**
 	 * Register the action hook.
@@ -14,7 +14,7 @@ class SmartRedirect
 	 * @since 1.0.0
 	 * @return void
 	 */
-    public static function start(): void
+    public static function register(): void
     {
         add_action('wp_footer', [self::class, 'action']);
     }

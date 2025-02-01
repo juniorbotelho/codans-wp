@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codans\Elementor\Hook;
+namespace Codans\Elementor\Controller;
 
 use ElementorPro\Modules\Forms\Registrars\Form_Actions_Registrar;
 use Codans\Elementor\Actions\KitAction;
 use Codans\Utils\LogEmail;
 
-class FormAction
+class FormActionController
 {
 	/**
 	 * Register the action hook.
@@ -16,7 +16,7 @@ class FormAction
 	 * @since 1.0.0
 	 * @return void
 	 */
-	public static function start(): void
+	public static function register(): void
 	{
 		add_action('elementor_pro/forms/actions/register', [self::class, 'action']);
 	}

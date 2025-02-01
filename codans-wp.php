@@ -26,8 +26,8 @@ require_once __DIR__ . 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
-use Codans\Elementor\Hook\FormAction;
-use Codans\Wordpress\Hook\SmartRedirect;
+use Codans\Elementor\Controller\FormActionController;
+use Codans\Wordpress\Controller\SmartRedirectController;
 
-FormAction::start();
-SmartRedirect::start();
+FormActionController::register();
+SmartRedirectController::register();
