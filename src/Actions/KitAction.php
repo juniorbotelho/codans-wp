@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Codans\Actions;
 
-use ElementorPro\Modules\Forms\Classes\Action_Base;
-use Elementor\Controls_Manager;
+use ElementorPro\Modules\Forms\Classes\{Action_Base, Ajax_Handler, Form_Record};
+use ElementorPro\Core\Utils;
+use Elementor\{Controls_Manager, Widget_Base};
 use Codans\Interfaces\Utils\ILogEmail;
 
 /**
@@ -21,7 +22,7 @@ class KitAction extends Action_Base
         /**
          * Log email class dependency.
          *
-         * @var \Codans\Codans\Utils\ILogEmail
+         * @var ILogEmail
          */
         private readonly ILogEmail $log_email,
     ) {
@@ -62,9 +63,9 @@ class KitAction extends Action_Base
      *
      * @since 1.0.0
      * @access public
-     * @param \Elementor\Widget_Base $widget
+     * @param Widget_Base $widget
      */
-    public function register_settings_section($widget): void
+    public function register_settings_section(Widget_Base $widget): void
     {
         $widget->start_controls_section('section_kit', [
             'label' => esc_html__('Kit', 'elementor-form-actions'),
@@ -90,10 +91,10 @@ class KitAction extends Action_Base
      *
      * @since 1.0.0
      * @access public
-     * @param \ElementorPro\Modules\Forms\Classes\Form_Record  $record
-     * @param \ElementorPro\Modules\Forms\Classes\Ajax_Handler $ajax_handler
+     * @param Form_Record  $record
+     * @param Ajax_Handler $ajax_handler
      */
-    public function run($record, $ajax_handler): void
+    public function run(Form_Record $record): void
     {
         $settings = $record->get('form_settings');
 
@@ -159,7 +160,7 @@ class KitAction extends Action_Base
                 'tags'   => $personal_tag,
             ],
             'siteOptions' => [
-                'ipAddress' => \ElementorPro\Core\Utils::get_client_ip(),
+                'ipAddress' => Utils::get_client_ip(),
                 'referrer'  => isset($_POST['referrer']) ? $_POST['referrer'] : '',
             ]
         ];
@@ -203,7 +204,7 @@ class KitAction extends Action_Base
      * @access public
      * @param array $element
      */
-    public function on_export($element): array
+    public function on_export(array $element): array
     {
         unset(
             $element['kit_url'],
@@ -222,7 +223,7 @@ class KitAction extends Action_Base
      * @access private
      * @param array $personal_name
      */
-    private function get_personal_name($full_name): array
+    private function get_personal_name(array $full_name): array
     {
         $personal_name = [
             'first_name' => '',
