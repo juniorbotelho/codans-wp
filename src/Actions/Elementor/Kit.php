@@ -1,9 +1,11 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Codans\Elementor\Actions;
 
 use ElementorPro\Modules\Forms\Classes\Action_Base;
+use Elementor\Controls_Manager;
 use Codans\Interfaces\Utils\ILogEmail;
 
 /**
@@ -15,16 +17,14 @@ use Codans\Interfaces\Utils\ILogEmail;
  */
 class KitAction extends Action_Base
 {
-    /**
-     * Log email class dependency.
-     *
-     * @var \Codans\Codans\Utils\ILogEmail
-     */
-    private ILogEmail $log_email;
-
-    public function __construct(ILogEmail $log_email)
-    {
-        $this->log_email = $log_email;
+    public function __construct(
+        /**
+         * Log email class dependency.
+         *
+         * @var \Codans\Codans\Utils\ILogEmail
+         */
+        private readonly ILogEmail $log_email,
+    ) {
     }
 
     /**
@@ -77,7 +77,7 @@ class KitAction extends Action_Base
             'label'       => esc_html__('Email Receptor', 'elementor-form-actions'),
             'description' => esc_html__('Email Receptor to provide error logs when catched', 'elementor-form-actions'),
             'placeholder' => 'johndoe@example.com',
-            'type'        => \Elementor\Controls_Manager::TEXT,
+            'type'        => Controls_Manager::TEXT,
         ]);
 
         $widget->end_controls_section();
@@ -100,7 +100,7 @@ class KitAction extends Action_Base
         $receptor = $settings['kit_email_receptor'];
 
         if (! empty($receptor)) {
-            $this->log_email->set_email_receptor($receptor);
+            $this->log_email->set_email_recipient($receptor);
         }
 
         // Get submitted form data.
