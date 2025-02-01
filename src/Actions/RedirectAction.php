@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codans\Wordpress\Actions;
+namespace Codans\Actions;
 
 use Codans\Interfaces\Actions\IRedirectAction;
 

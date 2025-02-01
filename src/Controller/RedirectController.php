@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codans\Wordpress\Controller;
+namespace Codans\Controller;
 
-use Codans\Wordpress\Actions\RedirectAction;
+use Codans\Actions\RedirectAction;
 
-class SmartRedirectController
+class RedirectController
 {
 	/**
 	 * Register the action hook.

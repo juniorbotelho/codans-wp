@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codans\Elementor\Actions;
+namespace Codans\Actions;
 
 use ElementorPro\Modules\Forms\Classes\Action_Base;
 use Elementor\Controls_Manager;

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codans\Elementor\Controller;
+namespace Codans\Controller;
 
 use ElementorPro\Modules\Forms\Registrars\Form_Actions_Registrar;
-use Codans\Elementor\Actions\KitAction;
+use Codans\Actions\KitAction;
 use Codans\Utils\LogEmail;
 
 class FormActionController
