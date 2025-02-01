@@ -20,8 +20,14 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
+require_once __DIR__ . 'vendor/autoload.php';
+
 // Variables
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
-require_once __DIR__ . 'vendor/autoload.php';
+use Codans\Elementor\Hook\FormAction;
+use Codans\Wordpress\Hook\SmartRedirect;
+
+FormAction::start();
+SmartRedirect::start();
