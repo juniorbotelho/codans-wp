@@ -10,32 +10,32 @@ use Codans\Utils\LogEmail;
 
 class FormActionController
 {
-	/**
-	 * Register the action hook.
-	 *
-	 * @since 1.0.0
-	 * @return void
-	 */
-	public static function register(): void
-	{
-		add_action('elementor_pro/forms/actions/register', [self::class, 'action']);
-	}
+    /**
+     * Register the action hook.
+     *
+     * @since 1.0.0
+     * @return void
+     */
+    public static function register(): void
+    {
+        add_action('elementor_pro/forms/actions/register', [self::class, 'action']);
+    }
 
-	/**
-	 * Add new subscriber to Kit.
-	 *
-	 * @since 1.0.0
-	 * @param Form_Actions_Registrar $form_actions_registrar
-	 * @return void
-	 */
-	public static function action(Form_Actions_Registrar $form_actions_registrar)
-	{
-		$email_provider = $_ENV['EMAIL_PROVIDER'] ?? '';
-		$email_receptor = $_ENV['EMAIL_RECEPTOR'] ?? '';
+    /**
+     * Add new subscriber to Kit.
+     *
+     * @since 1.0.0
+     * @param Form_Actions_Registrar $form_actions_registrar
+     * @return void
+     */
+    public static function action(Form_Actions_Registrar $form_actions_registrar)
+    {
+        $email_provider = $_ENV['EMAIL_PROVIDER'] ?? '';
+        $email_receptor = $_ENV['EMAIL_RECEPTOR'] ?? '';
 
-		$log_email = new LogEmail($email_provider, $email_receptor);
-		$custom_kit_action = new KitAction($log_email);
+        $log_email = new LogEmail($email_provider, $email_receptor);
+        $custom_kit_action = new KitAction($log_email);
 
-		$form_actions_registrar->register($custom_kit_action);
-	}
+        $form_actions_registrar->register($custom_kit_action);
+    }
 }

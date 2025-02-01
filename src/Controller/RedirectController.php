@@ -8,12 +8,12 @@ use Codans\Actions\RedirectAction;
 
 class RedirectController
 {
-	/**
-	 * Register the action hook.
-	 *
-	 * @since 1.0.0
-	 * @return void
-	 */
+    /**
+     * Register the action hook.
+     *
+     * @since 1.0.0
+     * @return void
+     */
     public static function register(): void
     {
         add_action('wp_footer', [self::class, 'action']);

@@ -6,5 +6,5 @@ namespace Codans\Interfaces\Actions;
 
 interface IRedirectAction
 {
-	public function run(): void;
+    public function run(): void;
 }
