@@ -1,13 +1,13 @@
 <?php
 
-namespace Codans\Codans\Elementor\Hook;
+namespace Codans\Elementor\Hook;
 
 if (!defined('ABSPATH')) {
 	exit;
 }
 
-use Codans\Codans\Elementor\Actions\KitAction;
-use \Codans\Codans\Utils\LogEmail;
+use Codans\Elementor\Actions\KitAction;
+use Codans\Utils\LogEmail;
 
 /**
  * Add new subscriber to Kit.

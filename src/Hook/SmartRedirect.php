@@ -1,10 +1,6 @@
 <?php
 
-namespace Codans\Codans\Hook;
-
-if (!defined('ABSPATH')) {
-	exit;
-}
+namespace Codans\Native\Hook;
 
 /**
  * Act as a mediator, redirecting to url and saving user track to cookie.

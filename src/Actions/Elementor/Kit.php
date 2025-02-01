@@ -1,13 +1,9 @@
 <?php
 
-namespace Codans\Codans\Elementor\Actions;
+namespace Codans\Elementor\Actions;
 
-if (!defined('ABSPATH')) {
-	exit;
-}
-
-use \Codans\Codans\Utils\ILogEmail;
-use \ElementorPro\Modules\Forms\Classes\Action_Base;
+use ElementorPro\Modules\Forms\Classes\Action_Base;
+use Codans\Interfaces\Utils\ILogEmail;
 
 /**
  * Elementor form Kit action.
@@ -16,7 +12,7 @@ use \ElementorPro\Modules\Forms\Classes\Action_Base;
  *
  * @since 1.0.0
  */
-class KitAction extends \ElementorPro\Modules\Forms\Classes\Action_Base
+class KitAction extends Action_Base
 {
 	/**
 	 * Log email class dependency.

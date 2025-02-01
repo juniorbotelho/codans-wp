@@ -1,16 +1,8 @@
 <?php
 
-namespace Codans\Codans\Utils;
+namespace Codans\Utils;
 
-if (!defined('ABSPATH')) {
-	exit;
-}
-
-interface ILogEmail
-{
-	public function send_email_log(string $error_message): void;
-	public function set_email_recipient(string $email_receptor): void;
-}
+use Codans\Interfaces\Utils\ILogEmail;
 
 /**
  * Log Email utility
