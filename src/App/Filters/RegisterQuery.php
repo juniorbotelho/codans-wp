@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Codans\App\Filters;
 
-use Codans\Constants\Query;
-use Codans\Interfaces\Filters\IRegisterQuery;
+use Codans\App\Constants\Query;
+use Codans\App\Interfaces\Filters\IRegisterQuery;
 
 class RegisterQuery implements IRegisterQuery
 {

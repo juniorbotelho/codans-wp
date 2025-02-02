@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codans\Constants;
+namespace Codans\App\Constants;
 
 enum Query: string
 {

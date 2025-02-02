@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codans\Interfaces\Actions;
+namespace Codans\App\Interfaces\Actions;
 
 interface ICaptureSubscriberAction
 {

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Codans\App\Actions;
 
-use Codans\Constants\{Cookie, Query, Url};
-use Codans\Interfaces\Actions\ICaptureSubscriberAction;
-use Codans\Interfaces\Helpers\ICookieHelper;
+use Codans\App\Protocols\ICookieHelper;
+use Codans\App\Constants\{Cookie, Query, Url};
+use Codans\App\Interfaces\Actions\ICaptureSubscriberAction;
 
 class CaptureSubscriberAction implements ICaptureSubscriberAction
 {

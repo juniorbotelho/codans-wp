@@ -7,7 +7,7 @@ namespace Codans\App\Actions;
 use ElementorPro\Modules\Forms\Classes\{Action_Base, Ajax_Handler, Form_Record};
 use ElementorPro\Core\Utils;
 use Elementor\{Controls_Manager, Widget_Base};
-use Codans\Interfaces\Utils\ILogEmail;
+use Codans\App\Protocols\ILogEmail;
 
 /**
  * Elementor form Kit action.

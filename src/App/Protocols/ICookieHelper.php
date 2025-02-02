@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codans\Interfaces\Helpers;
+namespace Codans\App\Protocols;
 
 interface ICookieHelper
 {

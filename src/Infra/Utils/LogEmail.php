@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Codans\Utils;
+namespace Codans\Infra\Utils;
 
-use Codans\Interfaces\Utils\ILogEmail;
+use Codans\App\Protocols\ILogEmail;
 
 /**
  * Log Email utility
@@ -42,7 +42,7 @@ class LogEmail implements ILogEmail
      * @access public
      * @param string $error_message
      */
-    public function send_email_log(string $error_message): void
+    public function send(string $error_message): void
     {
         $to = $this->email_recipient;
         $subject = '[Codans] | Form Action';
@@ -68,7 +68,7 @@ class LogEmail implements ILogEmail
      * @access public
      * @param string $email_recipient
      */
-    public function set_email_recipient(string $email_recipient): void
+    public function setRecipient(string $email_recipient): void
     {
         $this->email_recipient = $email_recipient;
     }

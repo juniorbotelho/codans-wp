@@ -6,7 +6,7 @@ namespace Codans\Controller;
 
 use ElementorPro\Modules\Forms\Registrars\Form_Actions_Registrar;
 use Codans\App\Actions\KitAction;
-use Codans\Utils\LogEmail;
+use Codans\Infra\Utils\LogEmail;
 
 class FormActionController
 {

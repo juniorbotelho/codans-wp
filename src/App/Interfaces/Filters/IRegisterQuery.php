@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codans\Interfaces\Filters;
+namespace Codans\App\Interfaces\Filters;
 
 interface IRegisterQuery
 {

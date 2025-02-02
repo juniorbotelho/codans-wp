@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Codans\App\Helpers;
+namespace Codans\Infra\Helpers;
 
-use Codans\Constants\Cookie;
-use Codans\Interfaces\Helpers\ICookieHelper;
+use Codans\App\Protocols\ICookieHelper;
+use Codans\App\Constants\Cookie;
 
 class CookieHelper implements ICookieHelper
 {
