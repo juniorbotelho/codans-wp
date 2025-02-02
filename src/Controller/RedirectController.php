@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Codans\Controller;
 
-use Codans\Actions\RedirectAction;
+use Codans\Application\Actions\RedirectAction;
 
 class RedirectController
 {

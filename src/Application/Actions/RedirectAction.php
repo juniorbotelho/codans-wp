@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codans\Actions;
+namespace Codans\Application\Actions;
 
 use Codans\Interfaces\Actions\IRedirectAction;
 

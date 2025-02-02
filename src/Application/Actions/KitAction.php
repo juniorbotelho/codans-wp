@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codans\Actions;
+namespace Codans\Application\Actions;
 
 use ElementorPro\Modules\Forms\Classes\{Action_Base, Ajax_Handler, Form_Record};
 use ElementorPro\Core\Utils;
