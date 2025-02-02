@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Codans\App\Filters;
 
+use Codans\Constants\Query;
 use Codans\Interfaces\Filters\IRegisterQuery;
 
 class RegisterQuery implements IRegisterQuery
@@ -17,7 +18,7 @@ class RegisterQuery implements IRegisterQuery
      */
     public function run(array $queries): array
     {
-        $queries[] = 'url';
+        $queries[] = Query::SUBSCRIBER_ID->value;
 
         return $queries;
     }

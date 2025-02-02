@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Codans\Controller;
 
-use Codans\App\Actions\RedirectAction;
+use Codans\App\Actions\EmailTrackingAction;
 
-class RedirectController
+class EmailTrackingController
 {
     /**
      * Register the action hook.
@@ -27,7 +27,7 @@ class RedirectController
      */
     public static function action(): void
     {
-        $action = new RedirectAction();
+        $action = new EmailTrackingAction();
         $action->run();
     }
 }
