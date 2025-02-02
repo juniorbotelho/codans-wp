@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Codans\Presenter\Controller;
 
 use Codans\App\Actions\CaptureSubscriberAction;
-use Codans\Infra\Helpers\CookieHelper;
-use Codans\Infra\Services\CookieStoreService;
+use Codans\Framework\Helpers\CookieHelper;
+use Codans\Framework\Services\CookieStoreService;
 
 class CaptureSubscriberController
 {

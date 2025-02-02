@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codans\Infra\Helpers;
+namespace Codans\Framework\Helpers;
 
 use Codans\App\Protocols\ICookieHelper;
 use Codans\App\Constants\Cookie;
