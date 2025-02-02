@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Codans\App\Actions;
 
-use Codans\Constants\Query;
+use Codans\Constants\{Query, Url};
 use Codans\Interfaces\Actions\IEmailTrackingAction;
 
 class EmailTrackingAction implements IEmailTrackingAction
@@ -17,7 +17,7 @@ class EmailTrackingAction implements IEmailTrackingAction
      */
     public function run(): void
     {
-        if (!is_page('redirecionamento')) {
+        if (!is_page(Url::REDIRECT_PAGE_URL->value)) {
             return;
         }
 
