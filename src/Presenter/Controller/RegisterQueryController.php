@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codans\Controller;
+namespace Codans\Presenter\Controller;
 
 use Codans\App\Filters\RegisterQuery;
 

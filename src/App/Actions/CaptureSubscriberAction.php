@@ -37,16 +37,11 @@ class CaptureSubscriberAction implements ICaptureSubscriberAction
         $id = (int) $query;
 
         $cookie = json_encode([
-            'origin' => hash('sha256', $query),
-            'data' 	 => [
+            'data' => [
                 'id' 	=> $id,
                 'email' => null,
             ],
         ]);
-
-        if (!$cookie) {
-            throw new \JsonException("The json encode has failed." . json_last_error_msg());
-        }
 
         $this->cookieService->execute($cookie);
     }

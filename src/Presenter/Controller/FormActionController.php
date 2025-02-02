@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codans\Controller;
+namespace Codans\Presenter\Controller;
 
 use ElementorPro\Modules\Forms\Registrars\Form_Actions_Registrar;
 use Codans\App\Actions\KitAction;

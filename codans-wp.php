@@ -23,7 +23,7 @@ if (! defined('ABSPATH')) {
 require_once __DIR__ . '/vendor/autoload.php';
 
 use Dotenv\Dotenv;
-use Codans\Controller\{CaptureSubscriberController, FormActionController, RegisterQueryController};
+use Codans\Presenter\Controller\{CaptureSubscriberController, FormActionController, RegisterQueryController};
 
 /** @var Dotenv */
 $dotenv = Dotenv::createImmutable(__DIR__);
