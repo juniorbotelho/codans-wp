@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Codans\Interfaces\Actions;
 
-interface IEmailTrackingAction
+interface ICaptureSubscriberAction
 {
     public function run(): void;
 }

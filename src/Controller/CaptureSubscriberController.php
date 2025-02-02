@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Codans\Controller;
 
-use Codans\App\Actions\EmailTrackingAction;
+use Codans\App\Actions\CaptureSubscriberAction;
 use Codans\App\Helpers\CookieHelper;
 
-class EmailTrackingController
+class CaptureSubscriberController
 {
     /**
      * Register the action hook.
@@ -29,7 +29,7 @@ class EmailTrackingController
     public static function action(): void
     {
         $cookieHelper = new CookieHelper();
-        $action = new EmailTrackingAction($cookieHelper);
+        $action = new CaptureSubscriberAction($cookieHelper);
         $action->run();
     }
 }

@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Codans\App\Actions;
 
 use Codans\Constants\{Cookie, Query, Url};
-use Codans\Interfaces\Actions\IEmailTrackingAction;
+use Codans\Interfaces\Actions\ICaptureSubscriberAction;
 use Codans\Interfaces\Helpers\ICookieHelper;
 
-class EmailTrackingAction implements IEmailTrackingAction
+class CaptureSubscriberAction implements ICaptureSubscriberAction
 {
     public function __construct(
         private readonly ICookieHelper $cookieHelper,
