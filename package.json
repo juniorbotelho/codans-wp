@@ -1,0 +1,7 @@
+{
+  "name": "codans-wp",
+  "version": "1.0.0",
+  "description": "Official codans plugin that gives Wordpress superpowers to handle the company's own relationships.",
+  "author": "juniorbotelho<https://github.com/juniorbotelho>",
+  "license": "MIT"
+}
