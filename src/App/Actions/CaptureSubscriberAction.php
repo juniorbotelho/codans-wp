@@ -45,9 +45,9 @@ class CaptureSubscriberAction implements ICaptureSubscriberAction
         ]);
 
         if (!$cookie) {
-			throw new \JsonException("The json encode has failed." . json_last_error_msg());
-		}
+            throw new \JsonException("The json encode has failed." . json_last_error_msg());
+        }
 
-		$this->cookieService->execute($cookie);
+        $this->cookieService->execute($cookie);
     }
 }

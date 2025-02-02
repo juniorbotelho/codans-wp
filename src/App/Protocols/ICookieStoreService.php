@@ -6,5 +6,5 @@ namespace Codans\App\Protocols;
 
 interface ICookieStoreService
 {
-	public function execute(string $cookie): void;
+    public function execute(string $cookie): void;
 }

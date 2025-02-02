@@ -30,7 +30,7 @@ class CaptureSubscriberController
     public static function action(): void
     {
         $cookieHelper 		= new CookieHelper();
-		$cookieStoreService = new CookieStoreService($cookieHelper);
+        $cookieStoreService = new CookieStoreService($cookieHelper);
         $action 			= new CaptureSubscriberAction($cookieStoreService);
         $action->run();
     }
