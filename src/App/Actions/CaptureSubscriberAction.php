@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Codans\App\Actions;
 
-use Codans\App\Protocols\ICookieHelper;
-use Codans\App\Constants\{Cookie, Query, Url};
+use Codans\App\Constants\{Query, Url};
 use Codans\App\Interfaces\Actions\ICaptureSubscriberAction;
+use Codans\App\Protocols\ICookieStoreService;
 
 class CaptureSubscriberAction implements ICaptureSubscriberAction
 {
     public function __construct(
-        private readonly ICookieHelper $cookieHelper,
+        private readonly ICookieStoreService $cookieService,
     ) {
     }
 
@@ -44,12 +44,10 @@ class CaptureSubscriberAction implements ICaptureSubscriberAction
             ],
         ]);
 
-        $name		= $this->cookieHelper->getName(Cookie::EMAIL_TRACKING_ACTION->value);
-        $cookie		= $this->cookieHelper->encode($cookie);
-        $expires_in	= $this->cookieHelper->getExpiresIn();
-        $path		= $this->cookieHelper->getPath();
-        $domain		= $this->cookieHelper->getDomain();
+        if (!$cookie) {
+			throw new \JsonException("The json encode has failed." . json_last_error_msg());
+		}
 
-        setcookie($name, $cookie, (int) $expires_in, $path, $domain);
+		$this->cookieService->execute($cookie);
     }
 }

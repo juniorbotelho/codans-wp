@@ -6,6 +6,7 @@ namespace Codans\Controller;
 
 use Codans\App\Actions\CaptureSubscriberAction;
 use Codans\Infra\Helpers\CookieHelper;
+use Codans\Infra\Services\CookieStoreService;
 
 class CaptureSubscriberController
 {
@@ -28,8 +29,9 @@ class CaptureSubscriberController
      */
     public static function action(): void
     {
-        $cookieHelper = new CookieHelper();
-        $action = new CaptureSubscriberAction($cookieHelper);
+        $cookieHelper 		= new CookieHelper();
+		$cookieStoreService = new CookieStoreService($cookieHelper);
+        $action 			= new CaptureSubscriberAction($cookieStoreService);
         $action->run();
     }
 }
