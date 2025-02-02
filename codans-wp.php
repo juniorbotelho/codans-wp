@@ -29,5 +29,5 @@ use Codans\Controller\{FormActionController, RedirectController};
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
-FormActionController::register();
+// FormActionController::register();
 RedirectController::register();
