@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace Codans\App\Actions;
 
-use Codans\Constants\{Query, Url};
+use Codans\Constants\{Cookie, Query, Url};
 use Codans\Interfaces\Actions\IEmailTrackingAction;
+use Codans\Interfaces\Helpers\ICookieHelper;
 
 class EmailTrackingAction implements IEmailTrackingAction
 {
+    public function __construct(
+        private readonly ICookieHelper $cookieHelper,
+    ) {
+    }
+
     /**
      * Run redirect action.
      *
@@ -30,6 +36,20 @@ class EmailTrackingAction implements IEmailTrackingAction
 
         $id = (int) $query;
 
-        echo $id;
+        $cookie = json_encode([
+            'origin' => hash('sha256', $query),
+            'data' 	 => [
+                'id' 	=> $id,
+                'email' => null,
+            ],
+        ]);
+
+        $name		= $this->cookieHelper->getName(Cookie::EMAIL_TRACKING_ACTION->value);
+        $cookie		= $this->cookieHelper->encode($cookie);
+        $expires_in	= $this->cookieHelper->getExpiresIn();
+        $path		= $this->cookieHelper->getPath();
+        $domain		= $this->cookieHelper->getDomain();
+
+        setcookie($name, $cookie, (int) $expires_in, $path, $domain);
     }
 }

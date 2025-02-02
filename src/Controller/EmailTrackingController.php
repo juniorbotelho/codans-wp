@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Codans\Controller;
 
 use Codans\App\Actions\EmailTrackingAction;
+use Codans\App\Helpers\CookieHelper;
 
 class EmailTrackingController
 {
@@ -27,7 +28,8 @@ class EmailTrackingController
      */
     public static function action(): void
     {
-        $action = new EmailTrackingAction();
+        $cookieHelper = new CookieHelper();
+        $action = new EmailTrackingAction($cookieHelper);
         $action->run();
     }
 }
