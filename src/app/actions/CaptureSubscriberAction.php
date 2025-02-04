@@ -27,19 +27,20 @@ class CaptureSubscriberAction implements ICaptureSubscriberAction
             return;
         }
 
-        $query = get_query_var(Query::SUBSCRIBER_ID->value);
+        $subscriberId = get_query_var(Query::SUBSCRIBER_ID->value);
+		$email = get_query_var(Query::EMAIL_ADDRESS->value);
 
         // Stop any handling if the subscriber id aren't valid integer
-        if (!filter_var($query, FILTER_VALIDATE_INT)) {
+        if (!filter_var($subscriberId, FILTER_VALIDATE_INT)) {
             return;
         }
 
-        $id = (int) $query;
+        $id = (int) $subscriberId;
 
         $cookie = json_encode([
             'data' => [
                 'id' 	=> $id,
-                'email' => null,
+                'email' => $email,
             ],
         ]);
 

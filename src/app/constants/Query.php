@@ -12,4 +12,11 @@ enum Query: string
      * @var string
      */
     case SUBSCRIBER_ID = 'ck_subscriber_id';
+
+	/**
+	 * Subscriber email.
+	 *
+	 * @var string
+	 */
+	case EMAIL_ADDRESS = 'email';
 }
