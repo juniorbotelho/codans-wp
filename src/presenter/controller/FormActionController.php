@@ -6,7 +6,7 @@ namespace Codans\Presenter\Controller;
 
 use ElementorPro\Modules\Forms\Registrars\Form_Actions_Registrar;
 use Codans\App\Actions\KitAction;
-use Codans\Framework\Utils\LogEmail;
+use Codans\Framework\Helpers\LogEmail;
 
 class FormActionController
 {
@@ -33,8 +33,8 @@ class FormActionController
         $email_provider = $_ENV['EMAIL_PROVIDER'] ?? '';
         $email_receptor = $_ENV['EMAIL_RECEPTOR'] ?? '';
 
-        $log_email = new LogEmail($email_provider, $email_receptor);
-        $custom_kit_action = new KitAction($log_email);
+        $log_email			= new LogEmail($email_provider, $email_receptor);
+        $custom_kit_action	= new KitAction($log_email);
 
         $form_actions_registrar->register($custom_kit_action);
     }
