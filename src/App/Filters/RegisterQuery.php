@@ -19,7 +19,7 @@ class RegisterQuery implements IRegisterQuery
     public function run(array $queries): array
     {
         $queries[] = Query::SUBSCRIBER_ID->value;
-		$queries[] = Query::EMAIL_ADDRESS->value;
+        $queries[] = Query::EMAIL_ADDRESS->value;
 
         return $queries;
     }

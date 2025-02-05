@@ -11,7 +11,7 @@ declare(strict_types=1);
  * Author URI:  https://github.com/juniorbotelho/
  * Text Domain: codans-wp
  *
- * Requires Plugins: elementor
+ * DisableRequires Plugins: elementor
  * Elementor tested up to: 3.25.0
  * Elementor Pro tested up to: 3.25.0
  */
@@ -30,5 +30,5 @@ $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
 RegisterQueryController::register();
-// FormActionController::register();
+FormActionController::register();
 CaptureSubscriberController::register();

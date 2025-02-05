@@ -70,7 +70,7 @@ class CookieHelper implements ICookieHelper
      */
     public function getDomain(): string
     {
-        $domain = preg_replace('/^(https?:\/\/)?(www\.)?/i', '', home_url());
+        $domain = preg_replace('/^(https?:\/\/)(www\.)?|(?!\w+):\d+$/i', '', home_url());
 
         // Check if domain was extracted correctly
         if (!$domain) {
