@@ -5,9 +5,30 @@ declare(strict_types=1);
 namespace Codans\Infra\Adapters;
 
 use Codans\Domain\Protocols\ILibPhoneNumberAdapter;
+use libphonenumber\{NumberParseException, PhoneNumber, PhoneNumberFormat, PhoneNumberUtil};
 
 class LibPhoneNumberAdapter implements ILibPhoneNumberAdapter
 {
+	private readonly PhoneNumberUtil $libPhoneNumber;
+	private readonly PhoneNumber $phoneNumber;
+
+	/**
+	 * Set Phone number.
+	 *
+	 * @since 1.0.0
+	 * @return void
+	 */
+	public function setPhoneNumber(string $phoneNumber): void
+	{
+		try {
+			$this->libPhoneNumber = PhoneNumberUtil::getInstance();
+			$this->phoneNumber = $this->libPhoneNumber->parse($phoneNumber);
+		} catch (NumberParseException $e) {
+			// TODO: Put NumberParseException to custom exception.
+			throw $e;
+		}
+	}
+
 	/**
 	 * Get country.
 	 *
@@ -16,29 +37,20 @@ class LibPhoneNumberAdapter implements ILibPhoneNumberAdapter
 	 */
 	public function getCountry(): string
 	{
-		return $this->libPhoneNumber->getCountry();
+		return $this->libPhoneNumber->getRegionCodeForNumber($this->phoneNumber);
 	}
 
 	/**
 	 * Get country code.
 	 *
 	 * @since 1.0.0
-	 * @return string
+	 * @return int
 	 */
-	public function getCountryCode(): string
+	public function getCountryCode(): int
 	{
-		return $this->libPhoneNumber->getCountryCode();
-	}
+		$country = $this->getCountry();
 
-	/**
-	 * Get country code phone. E.g: +55 (Brazil).
-	 *
-	 * @since 1.0.0
-	 * @return string
-	 */
-	public function getCountryCodePhone(): string
-	{
-		return $this->libPhoneNumber->getCountryCodePhone();
+		return $this->libPhoneNumber->getCountryCodeForRegion($country);
 	}
 
 	/**
@@ -49,7 +61,7 @@ class LibPhoneNumberAdapter implements ILibPhoneNumberAdapter
 	 */
 	public function isValid(): bool
 	{
-		return $this->libPhoneNumber->isValid();
+		return $this->libPhoneNumber->isValidNumber($this->phoneNumber);
 	}
 
 	/**
@@ -60,18 +72,18 @@ class LibPhoneNumberAdapter implements ILibPhoneNumberAdapter
 	 */
 	public function isPossible(): bool
 	{
-		return $this->libPhoneNumber->isPossible();
+		return $this->libPhoneNumber->isPossibleNumber($this->phoneNumber);
 	}
 
 	/**
 	 * Get phone type. E.g: Mobile.
 	 *
 	 * @since 1.0.0
-	 * @return string
+	 * @return int
 	 */
-	public function getType(): string
+	public function getType(): int
 	{
-		return $this->libPhoneNumber->getType();
+		return $this->libPhoneNumber->getNumberType($this->phoneNumber);
 	}
 
 	/**
@@ -82,7 +94,7 @@ class LibPhoneNumberAdapter implements ILibPhoneNumberAdapter
 	 */
 	public function getInternationalFormat(): string
 	{
-		return $this->libPhoneNumber->getInternationalFormat();
+		return $this->libPhoneNumber->format($this->phoneNumber, PhoneNumberFormat::INTERNATIONAL);
 	}
 
 	/**
@@ -93,7 +105,7 @@ class LibPhoneNumberAdapter implements ILibPhoneNumberAdapter
 	 */
 	public function getNationalFormat(): string
 	{
-		return $this->libPhoneNumber->getNationalFormat();
+		return $this->libPhoneNumber->format($this->phoneNumber, PhoneNumberFormat::NATIONAL);
 	}
 
 	/**
@@ -104,17 +116,6 @@ class LibPhoneNumberAdapter implements ILibPhoneNumberAdapter
 	 */
 	public function getE164Format(): string
 	{
-		return $this->libPhoneNumber->getE164Format();
-	}
-
-	/**
-	 * Get RFC3966 phone format.
-	 *
-	 * @since 1.0.0
-	 * @return string
-	 */
-	public function getRFC3966Format(): string
-	{
-		return $this->libPhoneNumber->getRFC3966Format();
+		return $this->libPhoneNumber->format($this->phoneNumber, PhoneNumberFormat::E164);
 	}
 }
