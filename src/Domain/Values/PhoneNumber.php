@@ -5,34 +5,58 @@ declare(strict_types=1);
 namespace Codans\Domain\Values;
 
 use Codans\Domain\Interfaces\Values\IPhoneNumber;
+use Codans\Domain\Protocols\ILibPhoneNumberAdapter;
 
 class PhoneNumber implements IPhoneNumber
 {
+	/**
+	 * @var ILibPhoneNumberAdapter $libPhoneNumber
+	 */
+	private readonly ILibPhoneNumberAdapter $libPhoneNumber;
+
     /**
      * Phone number value object.
      *
-     * @param string $country,
-     * @param string $countryCode,
-     * @param string $countryCodePhone,
-     * @param bool $isValid,
-     * @param bool $isPossible,
-     * @param string $type,
-     * @param string $internationalFormat,
-     * @param string $nationalFormat,
-     * @param string $e164Format,
-     * @param string $rfc3966Format,
+     * @param string $phoneNumber
      */
     public function __construct(
-        private readonly string $country,
-        private readonly string $countryCode,
-        private readonly string $countryCodePhone,
-        private readonly bool $isValid,
-        private readonly bool $isPossible,
-        private readonly string $type,
-        private readonly string $internationalFormat,
-        private readonly string $nationalFormat,
-        private readonly string $e164Format,
-        private readonly string $rfc3966Format,
+        private readonly string $phoneNumber,
     ) {
     }
+
+	/**
+	 * Set the `lib-phonenumber` adapter.
+	 *
+	 * @var ILibPhoneNumberAdapter $libPhoneNumber
+	 */
+	public function setFormatter(ILibPhoneNumberAdapter $libPhoneNumber): void
+	{
+		$libPhoneNumber->setPhoneNumber($this->phoneNumber);
+
+		$this->libPhoneNumber = $libPhoneNumber;
+	}
+
+	/**
+	 * Build phone number format.
+	 *
+	 * @since 1.0.0
+	 * @return array{ country: string, countryCode: string, countryCodePhone: string, isValid: bool, isPossible: bool, type: string, internationalFormat: string, nationalFormat: string, e164Format: string, rfc3966Format: string } $phoneNumber
+	 */
+	public function getValue(): array
+	{
+		$phoneNumber = [
+			'country'				=> $this->libPhoneNumber->getCountry(),
+			'countryCode'			=> $this->libPhoneNumber->getCountryCode(),
+			'countryCodePhone'		=> $this->libPhoneNumber->getCountryCodePhone(),
+			'isValid'				=> $this->libPhoneNumber->isValid(),
+			'isPossible'			=> $this->libPhoneNumber->isPossible(),
+			'type'					=> $this->libPhoneNumber->getType(),
+			'internationalFormat'	=> $this->libPhoneNumber->getInternationalFormat(),
+			'nationalFormat'		=> $this->libPhoneNumber->getNationalFormat(),
+			'e164Format'			=> $this->libPhoneNumber->getE164Format(),
+			'rfc3966Format'			=> $this->libPhoneNumber->getRFC3966Format(),
+		];
+
+		return $phoneNumber;
+	}
 }

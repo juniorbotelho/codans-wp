@@ -11,7 +11,7 @@ enum Cookie: string
      *
      * @var string
      */
-    case EMAIL_TRACKING_ACTION = 'whoami';
+    case EMAIL_TRACKING_ACTION = 'kit';
 
     /**
      * The root path represents all site.
