@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codans\Presenter\Controller;
+namespace Codans\Presenter\Hook;
 
 use Codans\App\Actions\CaptureSubscriberAction;
 use Codans\Infra\Helpers\CookieHelper;
 use Codans\Infra\Services\CookieStoreService;
 
-class CaptureSubscriberController
+class CaptureSubscriberHook
 {
     /**
      * Register the action hook.

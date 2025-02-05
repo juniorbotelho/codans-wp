@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Codans\Presenter\Controller;
+namespace Codans\Presenter\Hook;
 
 use Codans\App\Filters\RegisterQuery;
 
-class RegisterQueryController
+class RegisterQueryHook
 {
     /**
      * Register the filter hook.

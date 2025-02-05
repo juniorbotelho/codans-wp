@@ -23,12 +23,12 @@ if (! defined('ABSPATH')) {
 require_once __DIR__ . '/vendor/autoload.php';
 
 use Dotenv\Dotenv;
-use Codans\Presenter\Controller\{CaptureSubscriberController, FormActionController, RegisterQueryController};
+use Codans\Presenter\Hook\{CaptureSubscriberHook, FormActionHook, RegisterQueryHook};
 
 /** @var Dotenv */
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
-RegisterQueryController::register();
-FormActionController::register();
-CaptureSubscriberController::register();
+RegisterQueryHook::register();
+FormActionHook::register();
+CaptureSubscriberHook::register();

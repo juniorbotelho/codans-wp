@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Codans\Presenter\Controller;
+namespace Codans\Presenter\Hook;
 
 use ElementorPro\Modules\Forms\Registrars\Form_Actions_Registrar;
 use Codans\App\Actions\KitAction;
 use Codans\Infra\Helpers\LogEmail;
 
-class FormActionController
+class FormActionHook
 {
     /**
      * Register the action hook.
