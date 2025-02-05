@@ -22,7 +22,7 @@ class GeoLocation implements IGeoLocation
         private readonly string $countryCode,
         private readonly string $region,
         private readonly string $city,
-        private readonly string $zipCode,
+        private readonly int $zipCode,
     ) {
     }
 }

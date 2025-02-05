@@ -47,14 +47,12 @@ class PhoneNumber implements IPhoneNumber
 		$phoneNumber = [
 			'country'				=> $this->libPhoneNumber->getCountry(),
 			'countryCode'			=> $this->libPhoneNumber->getCountryCode(),
-			'countryCodePhone'		=> $this->libPhoneNumber->getCountryCodePhone(),
 			'isValid'				=> $this->libPhoneNumber->isValid(),
 			'isPossible'			=> $this->libPhoneNumber->isPossible(),
 			'type'					=> $this->libPhoneNumber->getType(),
 			'internationalFormat'	=> $this->libPhoneNumber->getInternationalFormat(),
 			'nationalFormat'		=> $this->libPhoneNumber->getNationalFormat(),
 			'e164Format'			=> $this->libPhoneNumber->getE164Format(),
-			'rfc3966Format'			=> $this->libPhoneNumber->getRFC3966Format(),
 		];
 
 		return $phoneNumber;
