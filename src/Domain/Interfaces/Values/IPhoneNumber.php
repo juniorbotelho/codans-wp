@@ -9,5 +9,5 @@ use Codans\Domain\Protocols\ILibPhoneNumberAdapter;
 interface IPhoneNumber
 {
 	public function setFormatter(ILibPhoneNumberAdapter $libPhoneNumber): void;
-	public function getValue(): array;
+	public function getPhoneNumber(): array;
 }

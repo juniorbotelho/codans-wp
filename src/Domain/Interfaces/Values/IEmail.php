@@ -6,4 +6,5 @@ namespace Codans\Domain\Interfaces\Values;
 
 interface IEmail
 {
+	public function getEmail(): array;
 }

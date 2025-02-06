@@ -40,9 +40,9 @@ class PhoneNumber implements IPhoneNumber
 	 * Build phone number format.
 	 *
 	 * @since 1.0.0
-	 * @return array{ country: string, countryCode: string, countryCodePhone: string, isValid: bool, isPossible: bool, type: string, internationalFormat: string, nationalFormat: string, e164Format: string, rfc3966Format: string } $phoneNumber
+	 * @return array{ country: string, countryCode: string, countryCodePhone: string, isValid: bool, isPossible: bool, type: string, internationalFormat: string, nationalFormat: string, e164Format: string, rfc3966Format: string }
 	 */
-	public function getValue(): array
+	public function getPhoneNumber(): array
 	{
 		$phoneNumber = [
 			'country'				=> $this->libPhoneNumber->getCountry(),

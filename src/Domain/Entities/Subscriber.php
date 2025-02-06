@@ -6,6 +6,7 @@ namespace Codans\Domain\Entities;
 
 use Codans\Domain\Interfaces\Entities\ISubscriber;
 use Codans\Domain\Interfaces\Values\{IEmail, IGeoLocation, IPhoneNumber, ITag};
+use Codans\Domain\Protocols\ILibPhoneNumberAdapter;
 
 class Subscriber implements ISubscriber
 {
@@ -32,4 +33,34 @@ class Subscriber implements ISubscriber
         private readonly ?string $updated_at = null,
     ) {
     }
+
+	/**
+	 * Set container dependencies.
+	 *
+	 * @since 1.0.0
+	 * @param array{ @libPhoneNumberAdapter: ILibPhoneNumberAdapter | @geoLocationService: IGeoLocationService } $container
+	 * @return void
+	 */
+	public function setContainer(array $container): void
+	{
+		$this->geoLocation->setGeoLocationService($container['@geoLocationService']);
+		$this->phoneNumber->setFormatter($container['@libPhoneNumberAdapter']);
+	}
+
+	public function getModel(): array
+	{
+		$subscriber = [
+			'id'			=> $this->id,
+			'firstName' 	=> $this->firstName,
+			'lastName'		=> $this->lastName,
+			'email'			=> $this->email->getEmail(),
+			'geoLocation' 	=> $this->geoLocation->getGeoLocation(),
+			'phoneNumber'	=> $this->phoneNumber->getPhoneNumber(),
+			'tags'			=> $this->tags,
+			'createdAt'		=> $this->created_at,
+			'updatedAt'		=> $this->updated_at,
+		];
+
+		return $subscriber;
+	}
 }

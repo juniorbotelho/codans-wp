@@ -6,4 +6,6 @@ namespace Codans\Domain\Interfaces\Entities;
 
 interface ISubscriber
 {
+	public function setContainer(array $container): void;
+	public function getModel(): array;
 }
