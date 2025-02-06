@@ -35,22 +35,22 @@ class CaptureSubscriberHook
      */
     public static function action(): void
     {
-		$libPhoneNumberAdapter = new LibPhoneNumberAdapter();
+        $libPhoneNumberAdapter = new LibPhoneNumberAdapter();
 
-		$email			= new Email('junowerther@gmail.com');
-		$geoLocation 	= new GeoLocation('Brazil', 'BR', 'PA', 'Castanhal', 68740);
-		$phoneNumber 	= new PhoneNumber('+55 (91) 99116-4199');
-		$tag			= new Tag('Ação: Visualizou a grade de conteúdo', 1164199);
+        $email			= new Email('junowerther@gmail.com');
+        $geoLocation 	= new GeoLocation('Brazil', 'BR', 'PA', 'Castanhal', 68740);
+        $phoneNumber 	= new PhoneNumber('+55 (91) 99116-4199');
+        $tag			= new Tag('Ação: Visualizou a grade de conteúdo', 1164199);
 
-		$id			= 1;
-		$firstName 	= 'Junior';
-		$lastName 	= 'Botelho';
-		$subscriber = new Subscriber($id, $firstName, $lastName, $email, $geoLocation, $phoneNumber, [$tag]);
+        $id			= 1;
+        $firstName 	= 'Junior';
+        $lastName 	= 'Botelho';
+        $subscriber = new Subscriber($id, $firstName, $lastName, $email, $geoLocation, $phoneNumber, [$tag]);
 
-		$subscriber->setContainer([
-			'@geoLocationService'	 => [],
-			'@libPhoneNumberAdapter' => $libPhoneNumberAdapter,
-		]);
+        $subscriber->setContainer([
+            '@geoLocationService'	 => [],
+            '@libPhoneNumberAdapter' => $libPhoneNumberAdapter,
+        ]);
 
         $cookieHelper 		= new CookieHelper();
         $cookieStoreService = new CookieStoreService($cookieHelper);

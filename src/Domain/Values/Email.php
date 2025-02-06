@@ -20,19 +20,19 @@ class Email implements IEmail
     ) {
     }
 
-	/**
-	 * Get email.
-	 *
-	 * @since 1.0.0
-	 * @return array { address: string, domain: string }
-	 */
-	public function getEmail(): array
-	{
-		$email = [
-			'address' => $this->address,
-			'domain'  => $this->domain,
-		];
+    /**
+     * Get email.
+     *
+     * @since 1.0.0
+     * @return array { address: string, domain: string }
+     */
+    public function getEmail(): array
+    {
+        $email = [
+            'address' => $this->address,
+            'domain'  => $this->domain,
+        ];
 
-		return $email;
-	}
+        return $email;
+    }
 }

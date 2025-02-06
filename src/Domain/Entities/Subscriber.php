@@ -34,33 +34,33 @@ class Subscriber implements ISubscriber
     ) {
     }
 
-	/**
-	 * Set container dependencies.
-	 *
-	 * @since 1.0.0
-	 * @param array{ @libPhoneNumberAdapter: ILibPhoneNumberAdapter | @geoLocationService: IGeoLocationService } $container
-	 * @return void
-	 */
-	public function setContainer(array $container): void
-	{
-		$this->geoLocation->setGeoLocationService($container['@geoLocationService']);
-		$this->phoneNumber->setFormatter($container['@libPhoneNumberAdapter']);
-	}
+    /**
+     * Set container dependencies.
+     *
+     * @since 1.0.0
+     * @param array{ @libPhoneNumberAdapter: ILibPhoneNumberAdapter | @geoLocationService: IGeoLocationService } $container
+     * @return void
+     */
+    public function setContainer(array $container): void
+    {
+        $this->geoLocation->setGeoLocationService($container['@geoLocationService']);
+        $this->phoneNumber->setFormatter($container['@libPhoneNumberAdapter']);
+    }
 
-	public function getModel(): array
-	{
-		$subscriber = [
-			'id'			=> $this->id,
-			'firstName' 	=> $this->firstName,
-			'lastName'		=> $this->lastName,
-			'email'			=> $this->email->getEmail(),
-			'geoLocation' 	=> $this->geoLocation->getGeoLocation(),
-			'phoneNumber'	=> $this->phoneNumber->getPhoneNumber(),
-			'tags'			=> $this->tags,
-			'createdAt'		=> $this->created_at,
-			'updatedAt'		=> $this->updated_at,
-		];
+    public function getModel(): array
+    {
+        $subscriber = [
+            'id'			=> $this->id,
+            'firstName' 	=> $this->firstName,
+            'lastName'		=> $this->lastName,
+            'email'			=> $this->email->getEmail(),
+            'geoLocation' 	=> $this->geoLocation->getGeoLocation(),
+            'phoneNumber'	=> $this->phoneNumber->getPhoneNumber(),
+            'tags'			=> $this->tags,
+            'createdAt'		=> $this->created_at,
+            'updatedAt'		=> $this->updated_at,
+        ];
 
-		return $subscriber;
-	}
+        return $subscriber;
+    }
 }

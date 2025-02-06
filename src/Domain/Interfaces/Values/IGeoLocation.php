@@ -8,6 +8,6 @@ use Codans\Domain\Protocols\IGeoLocationService;
 
 interface IGeoLocation
 {
-	public function setGeoLocationService(IGeoLocationService $geoLocationService): void;
-	public function getGeoLocation(): array;
+    public function setGeoLocationService(IGeoLocationService $geoLocationService): void;
+    public function getGeoLocation(): array;
 }

@@ -6,5 +6,5 @@ namespace Codans\Domain\Protocols;
 
 interface IGeoLocationService
 {
-	public function execute(string $ipAddress): array;
+    public function execute(string $ipAddress): array;
 }
