@@ -10,9 +10,9 @@ use Codans\Domain\Values\PhoneNumber;
 use Codans\Domain\Values\Tag;
 use Codans\Domain\Entities\Subscriber;
 use Codans\App\Actions\CaptureSubscriberAction;
-use Codans\Infra\Adapters\LibPhoneNumberAdapter;
-use Codans\Infra\Helpers\CookieHelper;
-use Codans\Infra\Services\CookieStoreService;
+use Codans\Edge\Adapters\LibPhoneNumberAdapter;
+use Codans\Edge\Helpers\CookieHelper;
+use Codans\Edge\Services\CookieStoreService;
 
 class CaptureSubscriberHook
 {

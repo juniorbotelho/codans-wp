@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codans\Infra\Adapters;
+namespace Codans\Edge\Adapters;
 
 use Codans\Domain\Protocols\ILibPhoneNumberAdapter;
 use libphonenumber\{NumberParseException, PhoneNumber, PhoneNumberFormat, PhoneNumberUtil};

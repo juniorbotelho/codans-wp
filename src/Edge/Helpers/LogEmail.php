@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codans\Infra\Helpers;
+namespace Codans\Edge\Helpers;
 
 use Codans\App\Protocols\ILogEmail;
 

@@ -6,7 +6,7 @@ namespace Codans\Presenter\Hook;
 
 use ElementorPro\Modules\Forms\Registrars\Form_Actions_Registrar;
 use Codans\App\Actions\KitAction;
-use Codans\Infra\Helpers\LogEmail;
+use Codans\Edge\Helpers\LogEmail;
 
 class FormActionHook
 {

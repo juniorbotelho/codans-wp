@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Codans\Infra\Services;
+namespace Codans\Edge\Services;
 
 use Codans\App\Constants\Cookie;
 use Codans\App\Protocols\ICookieHelper;
