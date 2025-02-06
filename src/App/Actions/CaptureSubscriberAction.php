@@ -28,7 +28,6 @@ class CaptureSubscriberAction implements ICaptureSubscriberAction
         }
 
         $subscriberId = get_query_var(Query::SUBSCRIBER_ID->value);
-        $email = get_query_var(Query::EMAIL_ADDRESS->value);
 
         // Stop any handling if the subscriber id aren't valid integer
         if (!filter_var($subscriberId, FILTER_VALIDATE_INT)) {
@@ -40,7 +39,6 @@ class CaptureSubscriberAction implements ICaptureSubscriberAction
         $cookie = json_encode([
             'data' => [
                 'id' 	=> $id,
-                'email' => $email,
             ],
         ]);
 

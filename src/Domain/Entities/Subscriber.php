@@ -47,6 +47,12 @@ class Subscriber implements ISubscriber
         $this->phoneNumber->setPhoneNumberAdapter($container['@libPhoneNumberAdapter']);
     }
 
+	/**
+	 * Get model.
+	 *
+	 * @since 1.0.0
+	 * @return array { id: int, firstName: string, lastName: string, email: IEmail, geoLocation: IGeoLocation, phoneNumber: IPhoneNumber, tags: ITag[], createdAt: string, updatedAt: string }
+	 */
     public function getModel(): array
     {
         $subscriber = [
