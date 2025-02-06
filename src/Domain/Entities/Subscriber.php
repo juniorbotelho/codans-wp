@@ -44,7 +44,7 @@ class Subscriber implements ISubscriber
     public function setContainer(array $container): void
     {
         $this->geoLocation->setGeoLocationService($container['@geoLocationService']);
-        $this->phoneNumber->setFormatter($container['@libPhoneNumberAdapter']);
+        $this->phoneNumber->setPhoneNumberAdapter($container['@libPhoneNumberAdapter']);
     }
 
     public function getModel(): array

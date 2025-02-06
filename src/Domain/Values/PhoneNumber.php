@@ -29,7 +29,7 @@ class PhoneNumber implements IPhoneNumber
      *
      * @var ILibPhoneNumberAdapter $libPhoneNumber
      */
-    public function setFormatter(ILibPhoneNumberAdapter $libPhoneNumber): void
+    public function setPhoneNumberAdapter(ILibPhoneNumberAdapter $libPhoneNumber): void
     {
         $libPhoneNumber->setPhoneNumber($this->phoneNumber);
 
